@@ -14,7 +14,7 @@ const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-ce
 
 const Welcome = () => {
 
-    const { connectWallet, currentAccount, formData, handleChange, sendTransaction } = useContext(TransactionsContext); // Transffering the data to help us connect to the blockchain
+    const { connectWallet, currentAccount, formData, handleChange, sendTransaction, isLoading } = useContext(TransactionsContext); // Transffering the data to help us connect to the blockchain
 
     const handleSubmit = (e) => {
         const { addressTo, amount, keyword, message } = formData;
@@ -38,8 +38,6 @@ const Welcome = () => {
         />
 
     );
-
-    const [isLoading , setIsLoading] = useState(false);
     
     return(
         <div className="flex w-full justify-center items-center">
